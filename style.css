@@ -1,0 +1,162 @@
+#logo {     /*step 1*/
+    width: 475px;
+    animation: hw5_move 5s;
+}
+
+@keyframes hw5_move {      
+    from {width: 25px;}
+    to {top: 475px;}
+}
+
+/*step 2*/
+body {      
+    font-family: "Poppins", "Serif";
+    background-image: url("../images/concrete_seamless.png");
+    background-color: #f1f1f1;
+}
+
+/*step 3*/
+header{       
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*step 4*/
+#nav_links {         
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ /*step 5*/
+.nav_item a:link, .nav_item a:visited {   
+    color: #0700ee;
+}
+
+.nav_item a:hover, .nav_item a:active {
+    color: #50C7C7;
+}
+
+/*step 6*/
+.card > header {      
+    background: #288088;
+    border: 2px solid #45adad;
+    padding-top: 20px; 
+    padding-bottom: 20px;
+    border-radius: 50px 50px 0px 0px;
+}
+
+.card {
+    flex-basis: 450px;
+    border-radius: 50px 50px 0px 0px; 
+    flex-direction: column;
+}
+
+.pricing {         /*step 7 and 8*/
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* step 10: use flex, all images in one long row; when smaller, some images will wrap. also, center on page */
+.gallery{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/*step 9*/
+.gallery img{
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+
+
+/* step 11, 12, 13 */
+@media screen and (min-width:900px){
+    header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        position: sticky;
+        overflow: visible;
+        top: 0;
+        left: 0;
+        scroll-behavior: smooth;
+        /* display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        position: sticky; */
+    }
+    .nav_links{
+        display: flex;
+        flex-direction: row;
+        /* justify-content: flex-end; */
+    }
+    .card {
+        flex-basis: 275px;
+        z-index: -99;
+        overflow: hidden;
+    }
+    .pricing {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        overflow: hidden;
+    }
+}
+
+
+
+@media (prefers-reduced-motion) {
+    #logo {
+      animation: none;
+    }
+  }
+
+
+
+@media print {
+    body{
+        font-family: "Arial", "Helvetica";
+        background-image: none;
+    }
+    header{
+        display: flex;
+        flex-direction: column;
+    }
+    nav, .nav_links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%
+    }
+    .pricing {
+        bottom: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: nowrap;
+    }
+    .card {
+        flex-basis: 325px;
+        border: 2px solid #45ADDD
+    }
+    #gallery, .gallery {
+        display: none;
+    }
+
+    .card li:nth-child(2)::after {
+        content: "👍"
+    }
+    }    
+
+
